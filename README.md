@@ -14,6 +14,11 @@ conda activate skingpt4_llama2
 conda install -c conda-forge mamba=1.4.7
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
+(optional)
+```
+conda install jupyterlab ipykernel notebook -y
+python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingpt4"
+```
 
 ## Download our trained weights
 
