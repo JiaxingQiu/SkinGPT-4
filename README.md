@@ -65,6 +65,10 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_vicuna.
 ## Launching Demo Locally
 
 ### Llama2 Version
+```
+conda activate skingpt4_llama2
+pip install iopath timm
+```
 
 ```
 python demo.py --cfg-path eval_configs/skingpt4_eval_llama2_13bchat.yaml  --gpu-id 0
