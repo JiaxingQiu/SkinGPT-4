@@ -48,6 +48,8 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_llama2_
 
 ```shell
 # download Vicuna’s **delta** weight
+conda activate skingpt4_llama2
+conda install -c conda-forge git-lfs
 git lfs install
 git clone https://huggingface.co/lmsys/vicuna-13b-delta-v0
 
