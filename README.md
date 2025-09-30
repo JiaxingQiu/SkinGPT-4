@@ -57,7 +57,10 @@ git clone https://huggingface.co/lmsys/vicuna-13b-delta-v0
 git clone https://huggingface.co/huggyllama/llama-13b
 
 pip install git+https://github.com/lm-sys/FastChat.git@v0.1.10
-pip install transformers==4.28.0
+
+conda install -c conda-forge rust -y
+pip install --upgrade pip
+pip install "transformers==4.28.0"
 
 python -m fastchat.model.apply_delta --base ./llama-13b --target ./vicuna --delta ./vicuna-13b-delta-v0
 ```
