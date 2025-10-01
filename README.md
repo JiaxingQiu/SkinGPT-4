@@ -1,7 +1,7 @@
-# [Reproduce] Pre-trained Multimodal Large Language Model Enhances Dermatological Diagnosis using SkinGPT-4
+# [Reproduce] SkinGPT-4
 
 - original repo: https://github.com/JoshuaChou2018/SkinGPT-4
-- there are seemingly weird steps in this installation but they cannot be skipped for success on rivanna hpc. their installation has many problems on our gpu.
+-  weird steps in this installation cannot be skipped for rivanna hpc. the original installation has many problems on our gpu.
 
 
 ## Installation
