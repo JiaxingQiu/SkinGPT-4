@@ -59,6 +59,8 @@ git clone https://huggingface.co/huggyllama/llama-13b
 pip install git+https://github.com/lm-sys/FastChat.git@v0.1.10
 pip install transformers==4.28.0
 
+# conda install -y -c conda-forge ittapi intel-openmp mkl
+
 python -m fastchat.model.apply_delta --base ./llama-13b --target ./vicuna --delta ./vicuna-13b-delta-v0
 ```
 
@@ -69,7 +71,7 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_vicuna.
 ### Llama2 Version
 ```
 conda activate skingpt4_llama2
-pip install iopath timm
+pip install filelock iopath timm
 ```
 
 ```
