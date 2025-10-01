@@ -3,8 +3,9 @@
 
 ## (Option 1) Installation from our yml
 
-
 ```
+module load cuda/11.8.0
+conda env create -f skingpt4_env.yml
 ```
 
 
@@ -86,7 +87,7 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_vicuna.
 
 ### Llama2 Version
 ```
-conda activate skingpt4_llama2
+conda activate skingpt4
 pip uninstall -y numpy
 pip install numpy==1.26.4
 python demo.py --cfg-path eval_configs/skingpt4_eval_llama2_13bchat.yaml  --gpu-id 0
@@ -98,3 +99,8 @@ python demo.py --cfg-path eval_configs/skingpt4_eval_llama2_13bchat.yaml  --gpu-
 python demo.py --cfg-path eval_configs/skingpt4_eval_vicuna.yaml  --gpu-id 0
 ```
 
+
+## Final export to env.yml
+```
+conda env export --name skingpt4 --no-builds | grep -v "prefix:" > skingpt4_env.yml
+```
