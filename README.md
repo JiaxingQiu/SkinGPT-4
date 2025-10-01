@@ -9,10 +9,10 @@ King Abdullah University of Science and Technology, KAUST
 ## Installation
 
 ```
-source ~/miniconda3/etc/profile.d/conda.sh
-module avail
+#source ~/miniconda3/etc/profile.d/conda.sh
+#module avail
 module load cuda/11.8.0
-which nvcc 
+#which nvcc 
 
 conda env create -f environment.yml
 conda activate skingpt4_llama2
