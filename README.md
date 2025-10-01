@@ -38,6 +38,14 @@ python -m ipykernel install --user --name skingpt4 --display-name "skingpt4"
 ## Pretrained Weights are under /weights folder
 
 ## Prepare weight for LLMs 
+remember add model folders to .gitignore
+```
+echo "Llama-2-13b-chat-hf/" >> .gitignore
+cho "llama-13b/" >> .gitignore
+echo "vicuna-13b-delta-v0/" >> .gitignore
+```
+
+
 ### Llama2 Version
 
 ```shell
