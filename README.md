@@ -63,12 +63,18 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_llama2_
 conda activate skingpt4_llama2
 conda install -c conda-forge git-lfs
 git clone https://huggingface.co/lmsys/vicuna-13b-delta-v0
+cd vicuna-13b-delta-v0
 git lfs install
 # pull the real files
 git lfs pull
 
 # get llama-13b model
 git clone https://huggingface.co/huggyllama/llama-13b
+cd llama-13b
+git lfs install
+# pull the real files
+git lfs pull
+cd ..
 
 pip install git+https://github.com/lm-sys/FastChat.git@v0.1.10
 pip install transformers==4.28.0
