@@ -1,0 +1,50 @@
+# Core HF stack pinned for Vicuna delta flow (works on Python 3.9)
+transformers==4.28.0
+tokenizers==0.13.2
+huggingface-hub==0.13.4
+accelerate==0.16.0
+safetensors<0.4
+
+# Vision / data utils
+webdataset==0.2.48
+pycocotools==2.0.6
+pycocoevalcap
+opencv-python==4.7.0.72
+timm==0.6.13
+decord==0.6.0
+
+# NLP / misc
+spacy==3.5.1
+sentence-transformers
+omegaconf==2.3.0
+regex==2022.10.31
+pyyaml==6.0
+scikit-learn==1.2.2
+scipy==1.10.1
+umap-learn
+tenacity==8.2.2
+tqdm==4.64.1
+yarl==1.8.2
+zipp==3.14.0
+aiohttp==3.8.4
+aiosignal==1.3.1
+async-timeout==4.0.2
+attrs==22.2.0
+cchardet==2.1.7
+chardet==5.1.0
+cycler==0.11.0
+filelock==3.9.0
+fonttools==4.38.0
+importlib-resources==5.12.0
+kiwisolver==1.4.4
+matplotlib==3.7.0
+packaging==23.0
+psutil==5.9.4
+openai==0.27.0
+notebook
+gradio==3.24.1
+gradio-client==0.0.8
+wandb
+
+# Optional; install later only if you need it and CUDA/glibc match
+# bitsandbytes==0.37.0

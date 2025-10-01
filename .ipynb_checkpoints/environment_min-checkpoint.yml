@@ -1,0 +1,20 @@
+name: skingpt4_llama2
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - cudatoolkit=11.3
+  - pytorch=1.12.1
+  - torchvision=0.13.1
+  - torchaudio=0.12.1
+  - pytorch-mutex=1.0=cuda
+  - numpy=1.26.*
+  - iopath
+  - timm=0.6.13
+  - opencv
+  - omegaconf=2.3.0
+  - umap-learn
+  - sentence-transformers
+  - pip
