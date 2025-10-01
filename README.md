@@ -47,9 +47,11 @@ python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingp
 conda activate skingpt4_llama2
 conda install -c conda-forge git-lfs
 git clone https://huggingface.co/meta-llama/Llama-2-13b-chat-hf
+cd Llama-2-13b-chat-hf
 git lfs install
 # pull the real files
 git lfs pull
+cd ..
 ```
 
 Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_llama2_13bchat.yaml to be the path of Llama-2-13b-chat-hf.
