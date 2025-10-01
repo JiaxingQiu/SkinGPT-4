@@ -44,6 +44,9 @@ python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingp
 ### Llama2 Version
 
 ```shell
+conda activate skingpt4_llama2
+conda install -c conda-forge git-lfs
+git lfs install
 git clone https://huggingface.co/meta-llama/Llama-2-13b-chat-hf
 ```
 
