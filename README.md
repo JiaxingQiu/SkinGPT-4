@@ -46,8 +46,10 @@ python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingp
 ```shell
 conda activate skingpt4_llama2
 conda install -c conda-forge git-lfs
-git lfs install
 git clone https://huggingface.co/meta-llama/Llama-2-13b-chat-hf
+git lfs install
+# pull the real files
+git lfs pull
 ```
 
 Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_llama2_13bchat.yaml to be the path of Llama-2-13b-chat-hf.
@@ -58,8 +60,10 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_llama2_
 # download Vicuna’s **delta** weight
 conda activate skingpt4_llama2
 conda install -c conda-forge git-lfs
-git lfs install
 git clone https://huggingface.co/lmsys/vicuna-13b-delta-v0
+git lfs install
+# pull the real files
+git lfs pull
 
 # get llama-13b model
 git clone https://huggingface.co/huggyllama/llama-13b
