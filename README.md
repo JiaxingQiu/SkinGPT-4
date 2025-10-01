@@ -93,7 +93,7 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_vicuna.
 ```
 conda activate skingpt4_llama2
 pip uninstall -y numpy
-conda install -y numpy=1.26.4
+pip install numpy==1.26.4
 python demo.py --cfg-path eval_configs/skingpt4_eval_llama2_13bchat.yaml  --gpu-id 0
 ```
 
