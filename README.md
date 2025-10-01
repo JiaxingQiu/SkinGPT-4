@@ -1,15 +1,17 @@
 # [Reproduce] SkinGPT-4
 
 
-## (Option 1) Installation from our own yml
+## (Option 1) Installation from our yml
 
 
+```
+```
 
 
-
-## (Option 1) Installation from scratch based on original repo
+## (Option 2) Installation from scratch based on original repo
 - original repo: https://github.com/JoshuaChou2018/SkinGPT-4
-- weird steps cannot be skipped for rivanna hpc. the original installation has many problems (and dependence conflicts) on our gpu.
+- weird steps cannot be skipped for rivanna hpc. the original installation has many cuda problems (and dependence conflicts) on our gpu.
+- easier to do all steps in a python session
 
 ```
 #source ~/miniconda3/etc/profile.d/conda.sh
@@ -32,22 +34,9 @@ jupyter kernelspec remove skingpt4
 python -m ipykernel install --user --name skingpt4 --display-name "skingpt4"
 ```
 
-## Download our trained weights
+## Pretrained Weights are under /weights folder
 
-**Our previous trained weights for skin disease diagnosis with only base dataset and Llama2 could be downloaded at [skingpt4_llama2_13bchat_base_pretrain_stage2.pth](https://drive.google.com/file/d/1tcwEKSBl8J7wUKBJDwptcH7AwB5Ge7iW/view).** Then modify line 10 at SkinGPT-4-llama2/eval_configs/skingpt4_eval_llama2_13bchat.yaml to be the path of SkinGPT-4 weight.
-
-**Our previous trained weights for skin disease diagnosis with only step-1 dataset and Vicuna could be downloaded at [skingpt4_vicuna_v1.pth](https://drive.google.com/file/d/1PGBMBioipGxN5yfX6Okx4BGyPBm1prAF/view?usp=sharing).** Then modify line 11 at SkinGPT-4-llama2/eval_configs/skingpt4_eval_vicuna.yaml to be the path of SkinGPT-4 weight.
-
-**Please note:**
-
-- The released trained model above **cannot be used for skin disease diagnosis**, they can **only be used for testing code**.
-
-- The latest model trained with both **public skin disease datasets** and the **proprietary skin disease dataset** based on **falcon-40b-instruct** (deprecated) and **llama-2-13b-chat-hf** (code published only) are **not publicly available** currently due to privacy issues.
-
-- Please feel free to keep in touch with **xin.gao@kaust.edu.sa** and **juexiao.zhou@kaust.edu.sa** for potential collaboration.
-
-## Prepare weight for LLMs (start python session)
-
+## Prepare weight for LLMs 
 ### Llama2 Version
 
 ```shell
@@ -109,47 +98,3 @@ python demo.py --cfg-path eval_configs/skingpt4_eval_llama2_13bchat.yaml  --gpu-
 python demo.py --cfg-path eval_configs/skingpt4_eval_vicuna.yaml  --gpu-id 0
 ```
 
-## Illustraion of SkinGPT-4
-
-![Figure_1](https://cdn.jsdelivr.net/gh/JoshuaChou2018/oss@main/uPic/EQFQXz.Figure_1.png)
-
-## Examples of Skin disease diagnosis
-
-![Figure_3](https://cdn.jsdelivr.net/gh/JoshuaChou2018/oss@main/uPic/vXavYQ.Figure_3.png)
-
-
-
-## Clinical Evaluation
-
-![Figure_4](https://cdn.jsdelivr.net/gh/JoshuaChou2018/oss@main/uPic/vrHwZ4.Figure_4.png)
-
-
-
-## Acknowledgement
-
-- [MiniGPT-4](https://minigpt-4.github.io/) This repo is developped on MiniGPT-4, an awesome repo for vision-language chatbot!
-- Lavis
-- Vicuna
-- Falcon
-- Llama 2
-
-## Citation
-
-Our paper has been accepted by **Nature Communications**.
-
-![image-20240708131953458](https://cdn.jsdelivr.net/gh/JoshuaChou2018/oss@main/uPic/ce5kAk.image-20240708131953458.png)
-
-If you find SkinGPT-4 to be helpful in your research or applications, please cite SkinGPT-4 using this BibTeX:
-
-```
-@article{zhou2024pre,
-  title={Pre-trained multimodal large language model enhances dermatological diagnosis using SkinGPT-4},
-  author={Zhou, Juexiao and He, Xiaonan and Sun, Liyuan and Xu, Jiannan and Chen, Xiuying and Chu, Yuetan and Zhou, Longxi and Liao, Xingyu and Zhang, Bin and Afvari, Shawn and others},
-  journal={Nature Communications},
-  volume={15},
-  number={1},
-  pages={5649},
-  year={2024},
-  publisher={Nature Publishing Group UK London}
-}
-```
