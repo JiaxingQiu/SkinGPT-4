@@ -1,10 +1,15 @@
 # [Reproduce] SkinGPT-4
 
+
+## (Option 1) Installation from our own yml
+
+
+
+
+
+## (Option 1) Installation from scratch based on original repo
 - original repo: https://github.com/JoshuaChou2018/SkinGPT-4
--  weird steps in this installation cannot be skipped for rivanna hpc. the original installation has many problems on our gpu.
-
-
-## Installation
+- weird steps cannot be skipped for rivanna hpc. the original installation has many problems (and dependence conflicts) on our gpu.
 
 ```
 #source ~/miniconda3/etc/profile.d/conda.sh
@@ -12,8 +17,8 @@
 module load cuda/11.8.0
 #which nvcc 
 
-conda env create -f environment.yml
-conda activate skingpt4_llama2
+conda env create -f environment.yml -n skingpt4
+conda activate skingpt4
 conda install -c conda-forge mamba=1.4.7
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 conda uninstall pytorch torchvision torchaudio pytorch-cuda
@@ -22,7 +27,9 @@ conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=
 (optional)
 ```
 conda install jupyterlab ipykernel notebook -y
-python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingpt4"
+jupyter kernelspec list
+jupyter kernelspec remove skingpt4
+python -m ipykernel install --user --name skingpt4 --display-name "skingpt4"
 ```
 
 ## Download our trained weights
@@ -44,7 +51,7 @@ python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingp
 ### Llama2 Version
 
 ```shell
-conda activate skingpt4_llama2
+conda activate skingpt4
 conda install -c conda-forge git-lfs
 git clone https://huggingface.co/meta-llama/Llama-2-13b-chat-hf
 cd Llama-2-13b-chat-hf
@@ -60,7 +67,7 @@ Then modify line 16 at SkinGPT-4-llama2/skingpt4/configs/models/skingpt4_llama2_
 
 ```shell
 # download Vicuna’s **delta** weight
-conda activate skingpt4_llama2
+conda activate skingpt4
 conda install -c conda-forge git-lfs
 git clone https://huggingface.co/lmsys/vicuna-13b-delta-v0
 cd vicuna-13b-delta-v0
