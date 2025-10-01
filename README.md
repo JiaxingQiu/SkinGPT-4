@@ -1,10 +1,8 @@
 # [Reproduce] Pre-trained Multimodal Large Language Model Enhances Dermatological Diagnosis using SkinGPT-4
 
-[Juexiao Zhou](https://www.joshuachou.ink/about), Xiaonan He, Liyuan Sun, Jiannan Xu, Xiuying Chen, Yuetan Chu, Longxi Zhou, Xingyu Liao, Bin Zhang, Shawn Afvari, Xin Gao
+- original repo: https://github.com/JoshuaChou2018/SkinGPT-4
+- there are seemingly weird steps in this installation but they cannot be skipped for success on rivanna hpc. their installation has many problems on our gpu.
 
-King Abdullah University of Science and Technology, KAUST
-
-<a href='s41467-024-50043-3.pdf'><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
 
 ## Installation
 
@@ -16,7 +14,9 @@ module load cuda/11.8.0
 
 conda env create -f environment.yml
 conda activate skingpt4_llama2
-conda install -c conda-forge mamba=1.4.7 -y
+conda install -c conda-forge mamba=1.4.7
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+conda uninstall pytorch torchvision torchaudio pytorch-cuda
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 (optional)
