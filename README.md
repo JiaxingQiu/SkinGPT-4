@@ -11,8 +11,8 @@ King Abdullah University of Science and Technology, KAUST
 ```
 conda env create -f environment.yml
 conda activate skingpt4_llama2
-conda install -c conda-forge mamba=1.4.7
-conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install -c conda-forge mamba=1.4.7 -y
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia -y
 ```
 (optional)
 ```
@@ -34,7 +34,7 @@ python -m ipykernel install --user --name skingpt4_llama2 --display-name "skingp
 
 - Please feel free to keep in touch with **xin.gao@kaust.edu.sa** and **juexiao.zhou@kaust.edu.sa** for potential collaboration.
 
-## Prepare weight for LLMs
+## Prepare weight for LLMs (start python session)
 
 ### Llama2 Version
 
@@ -57,10 +57,7 @@ git clone https://huggingface.co/lmsys/vicuna-13b-delta-v0
 git clone https://huggingface.co/huggyllama/llama-13b
 
 pip install git+https://github.com/lm-sys/FastChat.git@v0.1.10
-
-conda install -c conda-forge rust -y
-pip install --upgrade pip
-pip install "transformers==4.28.0"
+pip install transformers==4.28.0
 
 python -m fastchat.model.apply_delta --base ./llama-13b --target ./vicuna --delta ./vicuna-13b-delta-v0
 ```
